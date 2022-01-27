@@ -22,7 +22,7 @@
 <footer id="colophon" class="site-footer" role="contentinfo">
     <div class="site-info">
         <p style="text-align: center;">Copyright © 2017
-            <a href="/" target="_blank" rel="noopener noreferrer">${options.optionSiteTitle}</a>
+            <a href="${pageContext.request.contextPath}/" target="_blank" rel="noopener noreferrer">${options.optionSiteTitle}</a>
             All rights reserved.
             <a target="_blank" href="${pageContext.request.contextPath}/map" >
                 <span class="font-text">站点地图</span>

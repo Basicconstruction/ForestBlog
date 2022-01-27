@@ -25,7 +25,7 @@
                     <c:forEach items="${menuList}" var="m">
                         <li class="menu-item">
                         <c:if test="${m.menuLevel==1}">
-                                <a href="${m.menuUrl}" >
+                                <a href="${pageContext.request.contextPath}/${m.menuUrl}" >
                                     <i class="${m.menuIcon}"></i>
                                     <span class="font-text">${m.menuName}&nbsp;</span>&nbsp;
                                 </a>
@@ -61,7 +61,7 @@
                         <ul id="menu-pcmenu" class="down-menu nav-menu sf-js-enabled sf-arrows">
 
                             <li>
-                                <a href="/">
+                                <a href="${pageContext.request.contextPath}/">
                                     <i class="fa-home fa"></i>
                                     <span class="font-text">首页</span>
                                 </a>
@@ -70,7 +70,7 @@
                             <c:forEach items="${allCategoryList}" var="category">
                                 <c:if test="${category.categoryPid==0}">
                                     <li>
-                                        <a href="/category/${category.categoryId}">
+                                        <a href="${pageContext.request.contextPath}/category/${category.categoryId}">
                                             <i class="${category.categoryIcon}"></i>
                                             <span class="font-text">${category.categoryName}&nbsp;</span>
                                         </a>
@@ -78,7 +78,7 @@
                                             <c:forEach items="${allCategoryList}" var="cate">
                                                 <c:if test="${cate.categoryPid==category.categoryId}">
                                                     <li>
-                                                        <a href="/category/${cate.categoryId}" target="_blank">${cate.categoryName}</a>
+                                                        <a href="${pageContext.request.contextPath}/category/${cate.categoryId}" target="_blank">${cate.categoryName}</a>
                                                     </li>
                                                 </c:if>
                                             </c:forEach>
@@ -90,10 +90,18 @@
                             <c:forEach items="${menuList}" var="m">
                                 <c:if test="${m.menuLevel == 2}">
                                     <li>
-                                        <a href="${m.menuUrl}">
-                                            <i class="${m.menuIcon}"></i>
-                                            <span class="font-text">${m.menuName}&nbsp;</span>
-                                        </a>
+                                        <c:if test="${fn:startsWith(m.menuUrl,'http')}">
+                                            <a href="${m.menuUrl}">
+                                                <i class="${m.menuIcon}"></i>
+                                                <span class="font-text">${m.menuName}&nbsp;</span>
+                                            </a>
+                                        </c:if>
+                                        <c:if test="${not fn:startsWith(m.menuUrl,'http')}">
+                                            <a href="${pageContext.request.contextPath}/${m.menuUrl}">
+                                                <i class="${m.menuIcon}"></i>
+                                                <span class="font-text">${m.menuName}&nbsp;</span>
+                                            </a>
+                                        </c:if>
                                     </li>
                                 </c:if>
                             </c:forEach>
@@ -114,7 +122,7 @@
     <div class="searchbar">
         <form method="get" id="searchform" action="${pageContext.request.contextPath}/search" accept-charset="UTF-8">
             <span>
-                <input type="text" value="" name="keywords" id="s" placeholder="输入搜索内容"required="">
+                <input type="text" value="" name="keywords" id="s" placeholder="输入搜索内容" required="">
                 <button type="submit" id="searchsubmit">搜索</button>
             </span>
         </form>
