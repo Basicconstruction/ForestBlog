@@ -52,7 +52,7 @@
                 <div class="layui-upload">
                     <div class="layui-upload-list" style="">
                         <img class="layui-upload-img" src="${user.userAvatar}" id="demo1" width="100"
-                             height="100">
+                             height="100" alt="icon">
                         <p id="demoText"></p>
                     </div>
                 </div>

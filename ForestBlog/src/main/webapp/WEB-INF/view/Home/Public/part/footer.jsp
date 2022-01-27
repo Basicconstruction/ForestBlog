@@ -5,6 +5,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
+<footer style="background:white;">
+    <div style="display:flex;flex-direction: row; margin-top:5px;">
+        <div style="width:20vw;margin-left:20vw;text-align: right;">
+            <a href="https://beian.miit.gov.cn/#/Integrated/index">豫ICP备2021037400</a>
+        </div>
+        <div style="width:20vw;margin-left:10vw;">
+            <img src="/img/备案图标.png" alt="备案图标">
+            <a href="https://beian.miit.gov.cn/#/Integrated/index">豫公安备41172502000139 </a>
+        </div>
+    </div>
+</footer>
+
+
 <%--页脚 start--%>
 <footer id="colophon" class="site-footer" role="contentinfo">
     <div class="site-info">
@@ -18,5 +31,6 @@
     </div>
     <!-- .site-info -->
 </footer><!-- .site-footer -->
+
 <%--页脚 end--%>
 

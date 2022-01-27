@@ -15,7 +15,7 @@
 
 
     <!--加载db.properties-->
-    <context:property-placeholder location="classpath:db.properties"/>
+    <context:property-placeholder location="classpath:base.properties"/>
 
     <!--配置druid连接池-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -29,16 +29,12 @@
         <property name="initialSize" value="1" />
         <property name="minIdle" value="1" />
         <property name="maxActive" value="20" />
-
         <!-- 配置获取连接等待超时的时间 -->
         <property name="maxWait" value="60000" />
-
         <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
         <property name="timeBetweenEvictionRunsMillis" value="60000" />
-
         <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
         <property name="minEvictableIdleTimeMillis" value="300000" />
-
         <property name="validationQuery" value="SELECT 'x'" />
         <property name="testWhileIdle" value="true" />
         <property name="testOnBorrow" value="false" />
@@ -68,7 +64,7 @@
     <!--mapper扫描器-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!--如果需要扫描多个包，中间使用半角逗号隔开-->
-        <property name="basePackage" value="com.liuyanzhao.ssm.blog.mapper"></property>
+        <property name="basePackage" value="com.liuyanzhao.ssm.blog.mapper"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 

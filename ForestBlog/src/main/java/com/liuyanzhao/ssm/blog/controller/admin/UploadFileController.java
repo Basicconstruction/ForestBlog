@@ -3,6 +3,7 @@ package com.liuyanzhao.ssm.blog.controller.admin;
 import com.liuyanzhao.ssm.blog.dto.JsonResult;
 import com.liuyanzhao.ssm.blog.dto.UploadFileVO;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.io.Resources;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -10,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.util.Calendar;
+import java.util.Properties;
 
 /**
  * @author liuyanzhao
@@ -23,7 +25,7 @@ public class UploadFileController {
      * 文件保存目录，物理路径
      */
 //    public final String rootPath = "/Users/liuyanzhao/Documents/uploads";
-    public final String rootPath = "D:\\uploads";
+    public String rootPath;
 
     public final String allowSuffix = ".bmp.jpg.jpeg.png.gif.pdf.doc.zip.rar.gz";
 
@@ -36,6 +38,9 @@ public class UploadFileController {
      */
     @RequestMapping(value = "/img", method = RequestMethod.POST)
     public JsonResult uploadFile(@RequestParam("file") MultipartFile file) {
+        if(rootPath==null||rootPath.equals("")){
+            getRootPath();
+        }
 
         //1.文件后缀过滤，只允许部分后缀
         //文件的完整名称,如spring.jpeg
@@ -89,5 +94,14 @@ public class UploadFileController {
         uploadFileVO.setTitle(filename);
         uploadFileVO.setSrc(fileUrl);
         return new JsonResult().ok(uploadFileVO);
+    }
+
+    private void getRootPath() {
+       try{
+           Properties properties = Resources.getResourceAsProperties("base.properties");
+           this.rootPath = properties.getProperty("upload.path");
+       }catch (Exception e){
+           e.printStackTrace();
+       }
     }
 }

@@ -148,9 +148,21 @@
     </div>
 
     <div class="layui-footer">
+        <footer style="background:white;">
+            <div style="display:flex;flex-direction: row; margin-top:5px;">
+                <div style="width:20vw;margin-left:20vw;text-align: right;">
+                    powered by © <a href="http://blog.liuyanzhao.com">言曌博客</a> 2017<a href="https://beian.miit.gov.cn/#/Integrated/index">豫ICP备2021037400</a>
+                </div>
+                <div style="width:20vw;margin-left:10vw;">
+                    <img src="/img/备案图标.png" alt="备案图标">
+                    <a href="https://beian.miit.gov.cn/#/Integrated/index">豫公安备41172502000139 </a>
+                </div>
+            </div>
+        </footer>
         <!-- 底部固定区域 -->
-        © <a href="http://blog.liuyanzhao.com">言曌博客</a> 2017  欢迎加入开发者交流群 590480292，博主免费回答大家日常问题。同时博主代做毕设，解决开发问题，详情参看 <a href="https://liuyanzhao.com/shop.html" target="_blank">有偿服务</a>
+
     </div>
+
 </div>
 
 <script src="/js/jquery.min.js"></script>

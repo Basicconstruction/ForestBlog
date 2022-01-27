@@ -98,6 +98,7 @@ public class TagServiceImpl implements TagService {
         try {
             tagMapper.deleteById(id);
             articleTagRefMapper.deleteByTagId(id);
+            //需要添加级联
         } catch (Exception e) {
             e.printStackTrace();
             log.error("删除标签失败, id:{}, cause:{}", id, e);

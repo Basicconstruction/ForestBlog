@@ -1,6 +1,8 @@
 package com.liuyanzhao.ssm.blog.service.impl;
 
 import com.liuyanzhao.ssm.blog.mapper.ArticleCategoryRefMapper;
+import com.liuyanzhao.ssm.blog.mapper.ArticleMapper;
+import com.liuyanzhao.ssm.blog.mapper.ArticleTagRefMapper;
 import com.liuyanzhao.ssm.blog.mapper.CategoryMapper;
 import com.liuyanzhao.ssm.blog.entity.Category;
 import com.liuyanzhao.ssm.blog.service.CategoryService;
@@ -29,12 +31,22 @@ public class CategoryServiceImpl implements CategoryService {
     @Autowired
     private ArticleCategoryRefMapper articleCategoryRefMapper;
 
+    @Autowired
+    private ArticleMapper articleMapper;
+
+    @Autowired
+    private ArticleTagRefMapper articleTagRefMapper;
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void deleteCategory(Integer id) {
         try {
             categoryMapper.deleteCategory(id);
+            List<Integer> articleId = articleCategoryRefMapper.selectArticleIdByCategoryId(id);
             articleCategoryRefMapper.deleteByCategoryId(id);
+            for(Integer i:articleId){
+                articleTagRefMapper.deleteByArticleId(id);
+                articleMapper.deleteById(i);
+            }
         } catch (Exception e) {
             e.printStackTrace();
             log.error("删除分类失败, id:{}, cause:{}", id, e);

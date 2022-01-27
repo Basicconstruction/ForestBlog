@@ -127,9 +127,9 @@
                                     </td>
                                     <td>
                                         <a href="/admin/category/edit/${c2.categoryId}" class="layui-btn layui-btn-mini">编辑</a>
-                                        <c:if test="${c2.articleCount==0}">
+<%--                                        <c:if test="${c2.articleCount==0}">--%>
                                             <a href="/admin/category/delete/${c2.categoryId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
-                                        </c:if>
+<%--                                        </c:if>--%>
                                     </td>
                                     <td class="cate-parent">${c2.categoryId}</td>
                                     <td>${c2.categoryPid}</td>
@@ -146,7 +146,7 @@
                 温馨提示：
                 <ul>
                     <li>分类最多只有两级，一级分类pid=0，二级分类pid=其父节点id</li>
-                    <li>如果该分类包含文章，将不可删除</li>
+                    <li>如果该分类包含文章，也可删除</li>
                 </ul>
             </blockquote>
         </div>

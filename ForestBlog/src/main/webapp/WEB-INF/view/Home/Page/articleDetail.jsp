@@ -61,6 +61,7 @@
                     <div class="single-content">
                             ${article.articleContent}
                     </div>
+
                     <div class="s-weixin">
                         <ul class="weimg1">
                             <li><strong>微信</strong></li>
@@ -74,6 +75,8 @@
                         </ul>
                         <div class="clear"></div>
                     </div>
+
+
                     <div class="clear"></div>
                     <div id="social">
                         <div class="social-main">

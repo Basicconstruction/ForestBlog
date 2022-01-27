@@ -72,6 +72,9 @@ public class BackCategoryController {
 
         if (count == 0) {
             categoryService.deleteCategory(id);
+        }else{
+            categoryService.deleteCategory(id);
+            System.out.println("删除了有文章的分类");
         }
         return "redirect:/admin/category";
     }

@@ -63,6 +63,7 @@ public class AdminController {
         //评论列表
         List<Comment> commentList = commentService.listRecentComment(userId, 5);
         model.addAttribute("commentList", commentList);
+        System.out.println("sucess");
         return "Admin/index";
     }
 
@@ -72,8 +73,8 @@ public class AdminController {
      * @return
      */
     @RequestMapping("/login")
-    public String
-    loginPage() {
+    public String loginPage() {
+        System.out.println("admin/login");
         return "Admin/login";
     }
 

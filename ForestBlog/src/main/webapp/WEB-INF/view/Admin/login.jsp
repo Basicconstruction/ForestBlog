@@ -103,7 +103,7 @@
         }
 
         wp_attempt_focus();
-        if(typeof wpOnload=='function')wpOnload();
+        if(typeof wpOnload=='function') wpOnload();
     </script>
     <p id="backtoblog"><a href="/">&larr; 返回到风吟博客</a> | <a href="/register">注册</a></p>
 
@@ -120,9 +120,9 @@
     $("#submit-btn").click(function () {
         var user = $("#user_login").val();
         var password = $("#user_pass").val();
-        if(user=="") {
+        if(user==="") {
             alert("用户名不可为空!");
-        } else if(password==""){
+        } else if(password===""){
             alert("密码不可为空!");
         } else {
             $.ajax({
@@ -133,9 +133,10 @@
                 data: $("#loginForm").serialize(),
                 dataType: "json",
                 success: function (data) {
-                    if(data.code==0) {
+                    if(data.code===0) {
                         alert(data.msg);
                     } else {
+                        console.log("/admin")
                         window.location.href="/admin";
 
                     }

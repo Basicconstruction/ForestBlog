@@ -96,9 +96,9 @@
                         </td>
                         <td>
                             <a href="/admin/tag/edit/${c.tagId}" class="layui-btn layui-btn-mini">编辑</a>
-                            <c:if test="${c.articleCount==0}">
+<%--                            <c:if test="${c.articleCount==0}">--%>
                                 <a href="/admin/tag/delete/${c.tagId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
-                            </c:if>
+<%--                            </c:if>--%>
 
                         </td>
                         <td >${c.tagId}</td>
