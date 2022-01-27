@@ -12,7 +12,7 @@
     <style>
         /*覆盖 layui*/
         .layui-input-block {
-            margin:0px 10px;
+            margin:0 10px;
         }
         .layui-table {
             margin-top: 0;
@@ -34,14 +34,14 @@
 
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a href="/admin/link">链接列表</a>
+              <a href="${pageContext.request.contextPath}/admin">首页</a>
+              <a href="${pageContext.request.contextPath}/admin/link">链接列表</a>
               <a><cite>添加链接</cite></a>
         </span>
     </blockquote>
     <div class="layui-row">
         <div class="layui-col-md4">
-            <form class="layui-form" method="post" id="myForm" action="/admin/link/insertSubmit">
+            <form class="layui-form" method="post" id="myForm" action="${pageContext.request.contextPath}/admin/link/insertSubmit">
                 <div class="layui-form-item">
                     <div class="layui-input-block">
                         <strong>编辑链接</strong>
@@ -119,8 +119,8 @@
                             ${l.linkOrder}
                         </td>
                         <td>
-                            <a href="/admin/link/edit/${l.linkId}" class="layui-btn layui-btn-mini">编辑</a>
-                            <a href="/admin/link/delete/${l.linkId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                            <a href="${pageContext.request.contextPath}/admin/link/edit/${l.linkId}" class="layui-btn layui-btn-mini">编辑</a>
+                            <a href="${pageContext.request.contextPath}/admin/link/delete/${l.linkId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
 
                         </td>
                     </tr>

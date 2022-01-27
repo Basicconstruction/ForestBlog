@@ -155,6 +155,7 @@ public class ArticleServiceImpl implements ArticleService {
         articleTagRefMapper.deleteByArticleId(id);
         // 删除评论
         commentMapper.deleteByArticleId(id);
+        System.out.println("删除完毕");
     }
 
 

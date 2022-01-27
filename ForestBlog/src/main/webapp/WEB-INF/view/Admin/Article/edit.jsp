@@ -16,14 +16,14 @@
 <rapid:override name="content">
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a href="/admin/article">文章列表</a>
+              <a href="${pageContext.request.contextPath}/admin">首页</a>
+              <a href="${pageContext.request.contextPath}/admin/article">文章列表</a>
               <a><cite>修改文章</cite></a>
         </span>
     </blockquote>
 
 
-    <form class="layui-form" method="post" id="myForm" action="/admin/article/editSubmit">
+    <form class="layui-form" method="post" id="myForm" action="${pageContext.request.contextPath}/admin/article/editSubmit">
         <input type="hidden" name="articleId" value="${article.articleId}">
         <div class="layui-form-item">
             <label class="layui-form-label">标题 <span style="color: #FF5722; ">*</span></label>
@@ -134,7 +134,7 @@
                 upload = layui.upload;
             var uploadInst = upload.render({
                 elem: '#test1',
-                url: '/admin/upload/img',
+                url: '${pageContext.request.contextPath}/admin/upload/img',
                 before: function (obj) {
                     obj.preview(function (index, file, result) {
                         $('#demo1').attr('src', result);

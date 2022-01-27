@@ -12,7 +12,7 @@
     <%--搜索框--%>
     <aside class="widget widget_search">
         <div class="searchbar">
-            <form method="get" id="searchform1" action="/search">
+            <form method="get" id="searchform1" action="${pageContext.request.contextPath}/search">
                     <span> <input type="text" value="" name="keywords" id="s1" placeholder="输入搜索内容" required="">
                         <button type="submit" id="searchsubmit1">搜索</button>
                     </span>
@@ -31,7 +31,7 @@
             <ul>
                 <c:forEach items="${mostCommentArticleList}" var="m">
                     <li>
-                        <a href="/article/${m.articleId}" rel="bookmark" title=" (${m.articleCommentCount}条评论)">
+                        <a href="${pageContext.request.contextPath}/article/${m.articleId}" rel="bookmark" title=" (${m.articleCommentCount}条评论)">
                                 ${m.articleTitle}
                         </a>
                     </li>

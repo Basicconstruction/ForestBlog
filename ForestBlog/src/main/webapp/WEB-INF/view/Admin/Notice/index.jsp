@@ -26,7 +26,7 @@
 
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-          <a href="/admin">首页</a>
+          <a href="${pageContext.request.contextPath}/admin">首页</a>
           <a><cite>公告列表</cite></a>
         </span>
     </blockquote>
@@ -54,7 +54,7 @@
 
                     <tr>
                         <td>
-                            <a href="/notice/${c.noticeId}" target="_blank">${c.noticeTitle}</a>
+                            <a href="${pageContext.request.contextPath}/notice/${c.noticeId}" target="_blank">${c.noticeTitle}</a>
                         </td>
                         <td>
                                 ${c.noticeOrder}
@@ -70,8 +70,8 @@
                             </c:choose>
                         </td>
                         <td>
-                            <a href="/admin/notice/edit/${c.noticeId}" class="layui-btn layui-btn-mini">编辑</a>
-                            <a href="/admin/notice/delete/${c.noticeId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                            <a href="${pageContext.request.contextPath}/admin/notice/edit/${c.noticeId}" class="layui-btn layui-btn-mini">编辑</a>
+                            <a href="${pageContext.request.contextPath}/admin/notice/delete/${c.noticeId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
                         </td>
                         <td >${c.noticeId}</td>
                     </tr>

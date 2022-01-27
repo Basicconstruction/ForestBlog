@@ -26,7 +26,7 @@
 <rapid:override name="content">
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-          <a href="/admin">首页</a>
+          <a href="${pageContext.request.contextPath}/admin">首页</a>
           <a><cite>文章列表</cite></a>
         </span>
     </blockquote>
@@ -59,17 +59,17 @@
                 <c:forEach items="${pageInfo.list}" var="a">
                     <tr>
                         <td>
-                            <a title="${a.user.userName}" href="/admin/user/edit/${a.articleUserId}" target="_blank">${a.user.userNickname}</a>
+                            <a title="${a.user.userName}" href="${pageContext.request.contextPath}/admin/user/edit/${a.articleUserId}" target="_blank">${a.user.userNickname}</a>
                         </td>
                         <td>
-                            <a href="/article/${a.articleId}"
+                            <a href="${pageContext.request.contextPath}/article/${a.articleId}"
                                target="_blank">
                                     ${a.articleTitle}
 
                             </a></td>
                         <td>
                             <c:forEach items="${a.categoryList}" var="c">
-                                <a href="/category/${c.categoryId}"
+                                <a href="${pageContext.request.contextPath}/category/${c.categoryId}"
                                    target="_blank">${c.categoryName}</a>
                                 &nbsp;
                             </c:forEach>
@@ -77,12 +77,12 @@
                         <td>
                             <c:choose>
                                 <c:when test="${a.articleStatus == 1}">
-                                    <a href="/admin/article?status=1">
+                                    <a href="${pageContext.request.contextPath}/admin/article?status=1">
                                         <span style="color:#5FB878;">已发布</span>
                                     </a>
                                 </c:when>
                                 <c:otherwise>
-                                    <a href="/admin/article?status=0">
+                                    <a href="${pageContext.request.contextPath}/admin/article?status=0">
                                         <span style="color:#FF5722;">草稿</span>
                                     </a>
                                 </c:otherwise>
@@ -93,7 +93,7 @@
                                             pattern="yyyy-MM-dd HH:mm:ss"/>
                         </td>
                         <td>
-                            <a href="/admin/article/edit/${a.articleId}"
+                            <a href="${pageContext.request.contextPath}/admin/article/edit/${a.articleId}"
                                class="layui-btn layui-btn-mini">编辑</a>
                             <a href="javascript:void(0)"
                                onclick="deleteArticle(${a.articleId})"
@@ -110,6 +110,5 @@
 
 </rapid:override>
 <rapid:override name="footer-script">
-    <script></script>
 </rapid:override>
 <%@ include file="../Public/framework.jsp" %>

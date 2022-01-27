@@ -143,9 +143,11 @@ public class BackArticleController {
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     public void deleteArticle(@PathVariable("id") Integer id, HttpSession session) {
         Article dbArticle = articleService.getArticleByStatusAndId(null, id);
+        System.out.println("ok finish");
         if (dbArticle == null) {
             return;
         }
+        System.out.println(dbArticle);
         User user = (User) session.getAttribute("user");
         // 如果不是管理员，访问其他用户的数据，则跳转403
         if (!Objects.equals(dbArticle.getArticleUserId(), user.getUserId()) && !Objects.equals(user.getUserRole(), UserRole.ADMIN.getValue())) {

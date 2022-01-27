@@ -23,7 +23,7 @@
 <rapid:override name="content">
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
+              <a href="${pageContext.request.contextPath}/admin">首页</a>
               <a><cite>评论列表</cite></a>
         </span>
     </blockquote>
@@ -49,7 +49,7 @@
             <c:forEach items="${pageInfo.list}" var="c">
                 <tr>
                     <td>
-                        <img src="${c.commentAuthorAvatar}" alt="" width="64px">
+                        <img src="${pageContext.request.contextPath}/${c.commentAuthorAvatar}" alt="" width="64px">
                         <strong>${c.commentAuthorName}</strong>
                         <br>
                             ${c.commentAuthorUrl} <br>
@@ -58,19 +58,19 @@
                     </td>
                     <td class="dashboard-comment-wrap">
                         <c:if test="${c.commentPid!=0}">
-                            <span class="at">@ </span><a href="${c.commentAuthorUrl}">${c.commentPname}</a>
+                            <span class="at">@ </span><a href="${pageContext.request.contextPath}/${c.commentAuthorUrl}">${c.commentPname}</a>
                         </c:if>
                             ${c.commentContent}
                         <div class="row-actions">
                                      <span class="">
-                                        <a href="/admin/comment/reply/${c.commentId}">
+                                        <a href="${pageContext.request.contextPath}/admin/comment/reply/${c.commentId}">
                                             回复
                                         </a>
                                      </span>
 
                             <c:if test="${sessionScope.user.userRole == 'admin'}">
                                         <span class=""> |
-                                            <a href="/admin/comment/edit/${c.commentId}">编辑</a>
+                                            <a href="${pageContext.request.contextPath}/admin/comment/edit/${c.commentId}">编辑</a>
                                          </span>
                             </c:if>
 
@@ -80,7 +80,7 @@
                         </div>
                     </td>
                     <td>
-                        <a href="/article/${c.article.articleId}"
+                        <a href="${pageContext.request.contextPath}/article/${c.article.articleId}"
                            target="_blank">${c.article.articleTitle}</a>
                     </td>
                     <td>

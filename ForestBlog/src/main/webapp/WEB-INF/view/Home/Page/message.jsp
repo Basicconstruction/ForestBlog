@@ -11,14 +11,14 @@
             background: #f8f8f8;
         }
     </style>
-    <link rel="stylesheet" href="/plugin/layui/css/layui.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/plugin/layui/css/layui.css">
 </rapid:override>
 
 
 <rapid:override name="breadcrumb">
     <%--面包屑导航 start--%>
     <nav class="breadcrumb">
-        <a class="crumbs" href="/">
+        <a class="crumbs" href="${pageContext.request.contextPath}/">
             <i class="fa fa-home"></i>首页
         </a>
         <i class="fa fa-angle-right"></i>
@@ -99,12 +99,12 @@
                     if (value.length > 12 || value.length < 4) {
                         return "用户名必须4到12位";
                     }
-                    if(checkUserName()==1) {
+                    if(checkUserName()===1) {
                         return "用户名已存在";
                     }
                 },
                 userEmail: function () {
-                    if(checkUserEmail()==1) {
+                    if(checkUserEmail()===1) {
                         return "电子邮箱已存在";
                     }
                 }

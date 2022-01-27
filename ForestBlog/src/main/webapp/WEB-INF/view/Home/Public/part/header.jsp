@@ -13,10 +13,10 @@
             <div class="user-login">
                 <c:choose>
                     <c:when test="${sessionScope.user==null}">
-                        <a href="/login">登录</a> | <a href="/register">注册</a>
+                        <a href="${pageContext.request.contextPath}/login">登录</a> | <a href="${pageContext.request.contextPath}/register">注册</a>
                     </c:when>
                     <c:otherwise>
-                        <a href="/admin">进入后台</a>
+                        <a href="${pageContext.request.contextPath}/admin">进入后台</a>
                     </c:otherwise>
                 </c:choose>
             </div>
@@ -45,7 +45,7 @@
                     <i class="fa fa-search"></i>
                 </span>
             <div class="logo-site"><h1 class="site-title">
-                <a href="/" title="${options.optionSiteTitle}">${options.optionSiteTitle}</a>
+                <a href="${pageContext.request.contextPath}/" title="${options.optionSiteTitle}">${options.optionSiteTitle}</a>
             </h1>
                 <p class="site-description">${options.optionSiteDescrption}</p>
             </div><!-- .logo-site -->
@@ -112,7 +112,7 @@
 <%--搜索框 start--%>
 <div id="search-main">
     <div class="searchbar">
-        <form method="get" id="searchform" action="/search" accept-charset="UTF-8">
+        <form method="get" id="searchform" action="${pageContext.request.contextPath}/search" accept-charset="UTF-8">
             <span>
                 <input type="text" value="" name="keywords" id="s" placeholder="输入搜索内容"required="">
                 <button type="submit" id="searchsubmit">搜索</button>

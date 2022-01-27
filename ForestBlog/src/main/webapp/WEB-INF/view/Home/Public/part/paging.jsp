@@ -25,14 +25,14 @@
                     <%--当前页为第一页，隐藏上一页按钮--%>
                 </c:when>
                 <c:otherwise>
-                    <a class="page-numbers" href="${pageUrlPrefix}=${pageInfo.pageNum-1}">
+                    <a class="page-numbers" href="${pageContext.request.contextPath}/${pageUrlPrefix}=${pageInfo.pageNum-1}">
                         <span class="fa fa-angle-left"></span>
                     </a>
                 </c:otherwise>
             </c:choose>
                 <%--显示第一页的页码--%>
             <c:if test="${begin >= 2 }">
-                <a class="page-numbers" href="${pageUrlPrefix}=1">1</a>
+                <a class="page-numbers" href="${pageContext.request.contextPath}/${pageUrlPrefix}=1">1</a>
             </c:if>
                 <%--显示点点点--%>
             <c:if test="${begin  > 2 }">
@@ -45,7 +45,7 @@
                         <a class="page-numbers current">${i}</a>
                     </c:when>
                     <c:otherwise>
-                        <a class="page-numbers" href="${pageUrlPrefix}=${i}">${i}</a>
+                        <a class="page-numbers" href="${pageContext.request.contextPath}/${pageUrlPrefix}=${i}">${i}</a>
                     </c:otherwise>
                 </c:choose>
             </c:forEach>
@@ -55,7 +55,7 @@
             </c:if>
                 <%-- 显示最后一页的数字 --%>
             <c:if test="${end < pageInfo.pages }">
-                <a href="${pageUrlPrefix}=${pageInfo.pages}">${pageInfo.pages}</a>
+                <a href="${pageContext.request.contextPath}/${pageUrlPrefix}=${pageInfo.pages}">${pageInfo.pages}</a>
             </c:if>
                 <%--下一页 --%>
             <c:choose>
@@ -63,7 +63,7 @@
                     <%--到了尾页隐藏，下一页按钮--%>
                 </c:when>
                 <c:otherwise>
-                    <a class="page-numbers" href="${pageUrlPrefix}=${pageInfo.pageNum+1}">
+                    <a class="page-numbers" href="${pageContext.request.contextPath}/${pageUrlPrefix}=${pageInfo.pageNum+1}">
                         <span class="fa fa-angle-right"></span>
                     </a>
                 </c:otherwise>

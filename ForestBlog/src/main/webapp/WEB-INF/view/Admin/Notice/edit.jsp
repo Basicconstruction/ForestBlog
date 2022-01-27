@@ -18,8 +18,8 @@
 
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a href="/admin/notice">公告列表</a>
+              <a href="${pageContext.request.contextPath}/admin">首页</a>
+              <a href="${pageContext.request.contextPath}/admin/notice">公告列表</a>
               <a><cite>编辑公告</cite></a>
         </span>
     </blockquote>

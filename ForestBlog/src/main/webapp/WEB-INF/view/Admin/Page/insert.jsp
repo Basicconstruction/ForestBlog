@@ -13,15 +13,15 @@
 <rapid:override name="content">
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a href="/admin/page">页面列表</a>
+              <a href="${pageContext.request.contextPath}/admin">首页</a>
+              <a href="${pageContext.request.contextPath}/admin/page">页面列表</a>
               <a><cite>新建页面</cite></a>
         </span>
     </blockquote>
 
 
     <form class="layui-form" method="post" id="myForm"
-          action="/admin/page/insertSubmit">
+          action="${pageContext.request.contextPath}/admin/page/insertSubmit">
         <div class="layui-form-item">
             <label class="layui-form-label">别名<span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-inline">
@@ -72,7 +72,7 @@
             //上传图片,必须放在 创建一个编辑器前面
             layedit.set({
                 uploadImage: {
-                    url: '/admin/upload/img' //接口url
+                    url: '${pageContext.request.contextPath}/admin/upload/img' //接口url
                     , type: 'post' //默认post
                 }
             });

@@ -11,7 +11,7 @@
 
 <rapid:override name="header-style">
     <rapid:override name="header-style">
-        <link rel="stylesheet" href="/css/highlight.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/highlight.css">
         <style>
             .entry-title {
                 background: #f8f8f8;
@@ -23,14 +23,14 @@
 <rapid:override name="breadcrumb">
     <%--面包屑导航 start--%>
     <nav class="breadcrumb">
-        <a class="crumbs" href="/">
+        <a class="crumbs" href="${pageContext.request.contextPath}/">
             <i class="fa fa-home"></i>首页
         </a>
         <c:choose>
             <c:when test="${article.categoryList != null && article.categoryList.size() > 0}">
                 <c:forEach items="${article.categoryList}" var="c">
                     <i class="fa fa-angle-right"></i>
-                    <a href="/category/${c.categoryId}">
+                    <a href="${pageContext.request.contextPath}/category/${c.categoryId}">
                             ${c.categoryName}
                     </a>
                 </c:forEach>
@@ -66,12 +66,12 @@
                         <ul class="weimg1">
                             <li><strong>微信</strong></li>
                             <li>赶快加我聊天吧</li>
-                            <li><img src="/img/weixin.jpg"></li>
+                            <li><img src="${pageContext.request.contextPath}/img/weixin.jpg"></li>
                         </ul>
                         <ul class="weimg2">
                             <li><strong>博客交流群</strong></li>
                             <li>海纳百川，大家来水</li>
-                            <li><img src="/img/qqGroup.jpg" alt="weinxin"></li>
+                            <li><img src="${pageContext.request.contextPath}/img/qqGroup.jpg" alt="weinxin"></li>
                         </ul>
                         <div class="clear"></div>
                     </div>
@@ -126,11 +126,11 @@
                             <c:if test="${sessionScope.user!=null && (sessionScope.user.userId == article.articleUserId || sessionScope.user.userRole == 'admin')}">
                                 <li class="edit-link">
                                     <a target="_blank" class="post-edit-link"
-                                       href="/admin/article/edit/${article.articleId}">编辑</a>
+                                       href="${pageContext.request.contextPath}/admin/article/edit/${article.articleId}">编辑</a>
                                 </li>
                             </c:if>
                             <li class="comment">
-                                <a href="/article/${article.articleId}#comments"
+                                <a href="${pageContext.request.contextPath}/article/${article.articleId}#comments"
                                    rel="external nofollow">
                                     <i class="fa fa-comment-o"></i>
                                     <i class="comment-count">${commentList.size()}</i>
@@ -154,7 +154,7 @@
                         <div class="single-cat-tag">
                             <div class="single-cat">所属分类：
                                 <c:forEach items="${article.categoryList}" var="c">
-                                    <a href="/category/${c.categoryId}">
+                                    <a href="${pageContext.request.contextPath}/category/${c.categoryId}">
                                             ${c.categoryName}
                                     </a>
                                 </c:forEach>
@@ -172,7 +172,7 @@
                 <ul class="" data-wow-delay="0.3s">
                     <c:forEach items="${article.tagList}" var="t">
                         <li>
-                            <a href="/tag/${t.tagId}" rel="tag"
+                            <a href="${pageContext.request.contextPath}/tag/${t.tagId}" rel="tag"
                                style="background:#666666">
                                     ${t.tagName}
                             </a>
@@ -198,7 +198,7 @@
                         发表。
                     </li>
                     <li class="reprinted"><strong>转载请注明：</strong>
-                        <a href="/article/${article.articleId}"
+                        <a href="${pageContext.request.contextPath}/article/${article.articleId}"
                            rel="bookmark"
                            title="本文固定链接 /article/${article.articleId}">
                                 ${article.articleTitle} | ${options.optionSiteTitle}</a>
@@ -219,7 +219,7 @@
                             <ul>
                                 <c:forEach items="${similarArticleList}" var="s">
                                     <li>
-                                        <a href="/article/${s.articleId}">${s.articleTitle}</a>
+                                        <a href="${pageContext.request.contextPath}/article/${s.articleId}">${s.articleTitle}</a>
                                     </li>
                                 </c:forEach>
                             </ul>
@@ -233,7 +233,7 @@
                             <ul>
                                 <c:forEach items="${mostViewArticleList}" var="m">
                                     <li>
-                                        <a href="/article/${m.articleId}">
+                                        <a href="${pageContext.request.contextPath}/article/${m.articleId}">
                                                 ${m.articleTitle}
                                         </a>
                                     </li>
@@ -252,7 +252,7 @@
             <nav class="nav-single">
                 <c:choose>
                     <c:when test="${preArticle!=null}">
-                        <a href="/article/${preArticle.articleId}" rel="next">
+                        <a href="${pageContext.request.contextPath}/article/${preArticle.articleId}" rel="next">
                             <span class="meta-nav">
                                 <span class="post-nav">上一篇
                                  <i class="fa fa-angle-left"></i>
@@ -271,7 +271,7 @@
                 </c:choose>
                 <c:choose>
                     <c:when test="${afterArticle!=null}">
-                        <a href="/article/${afterArticle.articleId}" rel="next">
+                        <a href="${pageContext.request.contextPath}/article/${afterArticle.articleId}" rel="next">
                             <span class="meta-nav">
                                 <span class="post-nav">下一篇
                                  <i class="fa fa-angle-right"></i>
@@ -299,10 +299,10 @@
                 <div id="respond" class="comment-respond">
                     <h3 id="reply-title" class="comment-reply-title"><span id="reply-title-word">发表评论</span>
                         <a rel="nofollow" id="cancel-comment-reply-link"
-                           href="/article/${article.articleId}#respond"
+                           href="${pageContext.request.contextPath}/article/${article.articleId}#respond"
                            style="">取消回复</a>
                         <c:if test="${sessionScope.user == null}">
-                            <span style="color:red" >您未登录，登录后才能评论，<a href="/login" target="_blank">前往登录</a></span>
+                            <span style="color:red" >您未登录，登录后才能评论，<a href="${pageContext.request.contextPath}/login" target="_blank">前往登录</a></span>
                         </c:if>
                     </h3>
 
@@ -366,7 +366,7 @@
                                                         <a href="javascript:void(0)"
                                                            onclick="deleteComment(${c.commentId})">删除</a>
                                                         <a class="comment-edit-link"
-                                                           href="/admin/comment/edit/${c.commentId}"
+                                                           href="${pageContext.request.contextPath}/admin/comment/edit/${c.commentId}"
                                                            target="_blank">编辑</a>
                                                     </c:if>
                                                     <span class="floor"> &nbsp;${floor}楼 </span>
@@ -415,7 +415,7 @@
                                                             <a href="javascript:void(0)"
                                                                onclick="deleteComment(${c2.commentId})">删除</a>
                                                             <a class="comment-edit-link"
-                                                               href="/admin/comment/edit/${c2.commentId}"
+                                                               href="${pageContext.request.contextPath}/admin/comment/edit/${c2.commentId}"
                                                                target="_blank">编辑</a>
                                                         </c:if>
                                                         <span class="floor"> &nbsp;${floor2}层 </span>
@@ -457,7 +457,7 @@
 <%--侧边栏 end--%>
 
 <rapid:override name="footer-script">
-    <script src="/js/jquery.cookie.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.cookie.js"></script>
 
     <script type="text/javascript">
 

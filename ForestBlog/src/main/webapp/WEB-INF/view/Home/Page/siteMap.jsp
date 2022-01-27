@@ -18,13 +18,13 @@
 </rapid:override>
 
 <rapid:override name="header-style">
-    <link rel="stylesheet" href="/plugin/layui/css/layui.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/plugin/layui/css/layui.css">
 </rapid:override>
 
 <rapid:override name="breadcrumb">
     <%--面包屑导航 start--%>
     <nav class="breadcrumb">
-        <a class="crumbs" href="/">
+        <a class="crumbs" href="${pageContext.request.contextPath}/">
             <i class="fa fa-home"></i>首页
         </a>
         <i class="fa fa-angle-right"></i>
@@ -46,7 +46,7 @@
                         <ul>
                             <c:forEach items="${articleList}" var="a">
                                 <li style="padding: 5px">
-                                    <a href="/article/${a.articleId}" title="ajax实现form表单提交" target="_blank">${a.articleTitle}</a>
+                                    <a href="${pageContext.request.contextPath}/article/${a.articleId}" title="ajax实现form表单提交" target="_blank">${a.articleTitle}</a>
                                 </li>
                             </c:forEach>
 
@@ -60,13 +60,13 @@
                             <c:forEach items="${categoryList}" var="c">
                                 <c:if test="${c.categoryPid==0}">
                                     <li class="cat-item" style="padding: 5px">
-                                        <a href="/category/${c.categoryId}">丨- ${c.categoryName}</a>
+                                        <a href="${pageContext.request.contextPath}/category/${c.categoryId}">丨- ${c.categoryName}</a>
                                     </li>
                                     <ul class="children">
                                         <c:forEach items="${categoryList}" var="c2">
                                             <c:if test="${c2.categoryPid==c.categoryId}">
                                                 <li class="cat-item" style="padding: 5px 30px;">
-                                                    <a href="/category/${c2.categoryId}" target="_blank">${c2.categoryName}</a>
+                                                    <a href="${pageContext.request.contextPath}/category/${c2.categoryId}" target="_blank">${c2.categoryName}</a>
                                                 </li>
                                             </c:if>
                                         </c:forEach>
@@ -80,7 +80,7 @@
                     <h2 class="layui-colla-title">标签库</h2>
                     <div class="layui-colla-content layui-show">
                         <c:forEach items="${tagList}" var="t">
-                            <a href="/tag/${t.tagId}" style="font-size: ${t.articleCount/4+14}px" title="${t.articleCount}个话题" target="_blank">${t.tagName}</a>
+                            <a href="${pageContext.request.contextPath}/tag/${t.tagId}" style="font-size: ${t.articleCount/4+14}px" title="${t.articleCount}个话题" target="_blank">${t.tagName}</a>
                         </c:forEach>
                     </div>
                 </div>

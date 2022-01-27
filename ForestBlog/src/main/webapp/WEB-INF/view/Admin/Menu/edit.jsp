@@ -13,7 +13,7 @@
     <style>
         /*覆盖 layui*/
         .layui-input-block {
-            margin:0px 10px;
+            margin:0 10px;
         }
         .layui-table {
             margin-top: 0;
@@ -34,15 +34,15 @@
 
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-          <a href="/admin">首页</a>
-          <a href="/admin/menu">菜单内容列表</a>
+          <a href="${pageContext.request.contextPath}/admin">首页</a>
+          <a href="${pageContext.request.contextPath}/admin/menu">菜单内容列表</a>
           <a><cite>编辑菜单内容</cite></a>
         </span>
     </blockquote>
 
     <div class="layui-row">
         <div class="layui-col-md4" >
-            <form class="layui-form"  method="post" id="myForm" action="/admin/menu/editSubmit">
+            <form class="layui-form"  method="post" id="myForm" action="${pageContext.request.contextPath}/admin/menu/editSubmit">
                 <div class="layui-form-item">
                     <div class="layui-input-block">
                         <strong>修改菜单项目</strong>
@@ -127,12 +127,12 @@
                                                 ${m.menuName}
                                         </td>
                                         <td>
-                                            <a href="${m.menuUrl}" target="_blank">${m.menuUrl}</a>
+                                            <a href="${pageContext.request.contextPath}/${m.menuUrl}" target="_blank">${m.menuUrl}</a>
                                         </td>
                                         <td>${m.menuOrder}</td>
                                         <td>
-                                            <a href="/admin/menu/edit/${m.menuId}" class="layui-btn layui-btn-mini">编辑</a>
-                                            <a href="/admin/menu/delete/${m.menuId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                                            <a href="${pageContext.request.contextPath}/admin/menu/edit/${m.menuId}" class="layui-btn layui-btn-mini">编辑</a>
+                                            <a href="${pageContext.request.contextPath}/admin/menu/delete/${m.menuId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
                                         </td>
                                     </tr>
                                 </c:if>
@@ -140,7 +140,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <divx class="layui-tab-item">
+                    <div class="layui-tab-item">
                         <table class="layui-table" >
                             <colgroup>
                                 <col width="100">
@@ -166,19 +166,19 @@
                                                 ${m.menuName}
                                         </td>
                                         <td>
-                                            <a href="${m.menuUrl}" target="_blank">${m.menuUrl}</a>
+                                            <a href="${pageContext.request.contextPath}/${m.menuUrl}" target="_blank">${m.menuUrl}</a>
                                         </td>
                                         <td>${m.menuOrder}</td>
                                         <td>
-                                            <a href="/admin/menu/edit/${m.menuId}" class="layui-btn layui-btn-mini">编辑</a>
-                                            <a href="/admin/menu/delete/${m.menuId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                                            <a href="${pageContext.request.contextPath}/admin/menu/edit/${m.menuId}" class="layui-btn layui-btn-mini">编辑</a>
+                                            <a href="${pageContext.request.contextPath}/admin/menu/delete/${m.menuId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
                                         </td>
                                     </tr>
                                 </c:if>
                             </c:forEach>
                             </tbody>
                         </table>
-                    </divx>
+                    </div>
                     <br><br><br>
                 </div>
             </div>

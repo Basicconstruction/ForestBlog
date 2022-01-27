@@ -11,14 +11,14 @@
             background: #f8f8f8;
         }
     </style>
-    <link rel="stylesheet" href="/plugin/layui/css/layui.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/plugin/layui/css/layui.css">
 </rapid:override>
 
 
 <rapid:override name="breadcrumb">
     <%--面包屑导航 start--%>
     <nav class="breadcrumb">
-        <a class="crumbs" href="/">
+        <a class="crumbs" href="${pageContext.request.contextPath}/">
             <i class="fa fa-home"></i>首页
         </a>
         <i class="fa fa-angle-right"></i>

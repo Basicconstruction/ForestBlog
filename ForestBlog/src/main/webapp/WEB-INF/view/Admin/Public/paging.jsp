@@ -29,14 +29,14 @@
                 </c:when>
                 <c:otherwise>
                     <a class="page-numbers"
-                       href="${pageUrlPrefix}=${pageInfo.pageNum-1}">
+                       href="${pageContext.request.contextPath}/${pageUrlPrefix}=${pageInfo.pageNum-1}">
                         <i class="layui-icon">&#xe603;</i>
                     </a>
                 </c:otherwise>
             </c:choose>
                 <%--显示第一页的页码--%>
             <c:if test="${begin >= 2 }">
-                <a class="page-numbers" href="${pageUrlPrefix}=1">1</a>
+                <a class="page-numbers" href="${pageContext.request.contextPath}/${pageUrlPrefix}=1">1</a>
             </c:if>
                 <%--显示点点点--%>
             <c:if test="${begin  > 2 }">
@@ -49,7 +49,7 @@
                         <a class="page-numbers current">${i}</a>
                     </c:when>
                     <c:otherwise>
-                        <a class="page-numbers" href="${pageUrlPrefix}=${i}">${i}</a>
+                        <a class="page-numbers" href="${pageContext.request.contextPath}/${pageUrlPrefix}=${i}">${i}</a>
                     </c:otherwise>
                 </c:choose>
             </c:forEach>
@@ -59,7 +59,7 @@
             </c:if>
                 <%-- 显示最后一页的数字 --%>
             <c:if test="${end < pageInfo.pages }">
-                <a href="${pageUrlPrefix}=${pageInfo.pages}">
+                <a href="${pageContext.request.contextPath}/${pageUrlPrefix}=${pageInfo.pages}">
                         ${pageInfo.pages}
                 </a>
             </c:if>
@@ -70,7 +70,7 @@
                 </c:when>
                 <c:otherwise>
                     <a class="page-numbers"
-                       href="${pageUrlPrefix}=${pageInfo.pageNum+1}">
+                       href="${pageContext.request.contextPath}/${pageUrlPrefix}=${pageInfo.pageNum+1}">
                         <i class="layui-icon">&#xe602;</i>
                     </a>
                 </c:otherwise>

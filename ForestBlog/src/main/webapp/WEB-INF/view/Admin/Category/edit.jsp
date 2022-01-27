@@ -11,7 +11,7 @@
 <rapid:override name="header-style">
     <style>
         .layui-input-block {
-            margin:0px 10px;
+            margin:0 10px;
         }
     </style>
 </rapid:override>
@@ -21,14 +21,14 @@
 
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a href="/admin/category">分类列表</a>
+              <a href="${pageContext.request.contextPath}/admin">首页</a>
+              <a href="${pageContext.request.contextPath}/admin/category">分类列表</a>
               <a><cite>编辑分类</cite></a>
         </span>
     </blockquote>
     <div class="layui-row">
         <div class="layui-col-md4" >
-            <form class="layui-form"  method="post" id="myForm" action="/admin/category/editSubmit">
+            <form class="layui-form"  method="post" id="myForm" action="${pageContext.request.contextPath}/admin/category/editSubmit">
                 <div class="layui-form-item">
                     <div class="layui-input-block">
                         <strong>修改分类</strong>
@@ -100,15 +100,15 @@
                     <c:if test="${c.categoryPid==0}">
                         <tr>
                             <td>
-                                <a href="/category/${c.categoryId}" target="_blank">${c.categoryName}</a>
+                                <a href="${pageContext.request.contextPath}/category/${c.categoryId}" target="_blank">${c.categoryName}</a>
                             </td>
                             <td>
-                                <a href="/category/${c.categoryId}" target="_blank">${c.articleCount}</a>
+                                <a href="${pageContext.request.contextPath}/category/${c.categoryId}" target="_blank">${c.articleCount}</a>
                             </td>
                             <td>
-                                <a href="/admin/category/edit/${c.categoryId}" class="layui-btn layui-btn-mini">编辑</a>
+                                <a href="${pageContext.request.contextPath}/admin/category/edit/${c.categoryId}" class="layui-btn layui-btn-mini">编辑</a>
                                 <c:if test="${c.articleCount==0}">
-                                    <a href="/admin/category/delete/${c.categoryId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                                    <a href="${pageContext.request.contextPath}/admin/category/delete/${c.categoryId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
                                 </c:if>
                             </td>
                             <td>${c.categoryId}</td>
@@ -118,15 +118,15 @@
                             <c:if test="${c2.categoryPid==c.categoryId}">
                                 <tr>
                                     <td>
-                                        <a href="/category/${c2.categoryId}" target="_blank">——${c2.categoryName}</a>
+                                        <a href="${pageContext.request.contextPath}/category/${c2.categoryId}" target="_blank">——${c2.categoryName}</a>
                                     </td>
                                     <td>
-                                        <a href="/category/${c2.categoryId}" target="_blank">${c2.articleCount}</a>
+                                        <a href="${pageContext.request.contextPath}/category/${c2.categoryId}" target="_blank">${c2.articleCount}</a>
                                     </td>
                                     <td>
-                                        <a href="/admin/category/edit/${c2.categoryId}" class="layui-btn layui-btn-mini">编辑</a>
+                                        <a href="${pageContext.request.contextPath}/admin/category/edit/${c2.categoryId}" class="layui-btn layui-btn-mini">编辑</a>
 <%--                                        <c:if test="${c2.articleCount==0}">--%>
-                                            <a href="/admin/category/delete/${c2.categoryId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                                            <a href="${pageContext.request.contextPath}/admin/category/delete/${c2.categoryId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
 <%--                                        </c:if>--%>
                                     </td>
                                     <td class="cate-parent">${c2.categoryId}</td>

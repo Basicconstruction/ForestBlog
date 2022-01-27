@@ -11,7 +11,7 @@
             <a href="https://beian.miit.gov.cn/#/Integrated/index">豫ICP备2021037400</a>
         </div>
         <div style="width:20vw;margin-left:10vw;">
-            <img src="/img/备案图标.png" alt="备案图标">
+            <img src="${pageContext.request.contextPath}/img/备案图标.png" alt="备案图标">
             <a href="https://beian.miit.gov.cn/#/Integrated/index">豫公安备41172502000139 </a>
         </div>
     </div>
@@ -24,7 +24,7 @@
         <p style="text-align: center;">Copyright © 2017
             <a href="/" target="_blank" rel="noopener noreferrer">${options.optionSiteTitle}</a>
             All rights reserved.
-            <a target="_blank" href="/map" >
+            <a target="_blank" href="${pageContext.request.contextPath}/map" >
                 <span class="font-text">站点地图</span>
             </a>
         </p>

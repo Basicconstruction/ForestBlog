@@ -25,7 +25,7 @@
 <rapid:override name="content">
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
+              <a href="${pageContext.request.contextPath}/admin">首页</a>
               <a><cite>链接列表</cite></a>
         </span>
     </blockquote>
@@ -60,7 +60,7 @@
                     ${l.linkName}
                 </td>
                 <td >
-                    <a href="${l.linkUrl}" target="_blank">${l.linkUrl}</a>
+                    <a href="${pageContext.request.contextPath}/${l.linkUrl}" target="_blank">${l.linkUrl}</a>
                 </td>
                 <td>
                     ${l.linkOwnerContact}
@@ -82,8 +82,8 @@
                     </c:choose>
                 </td>
                 <td>
-                    <a href="/admin/link/edit/${l.linkId}" class="layui-btn layui-btn-mini">编辑</a>
-                    <a href="/admin/link/delete/${l.linkId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                    <a href="${pageContext.request.contextPath}/admin/link/edit/${l.linkId}" class="layui-btn layui-btn-mini">编辑</a>
+                    <a href="${pageContext.request.contextPath}/admin/link/delete/${l.linkId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
                 </td>
                 <td>${l.linkId}</td>
             </tr>

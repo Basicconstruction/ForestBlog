@@ -14,9 +14,9 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 
     <title>抱歉，无法找到该页面！</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 
-    <link rel="stylesheet" type="text/css" href="/plugin/404/main.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/plugin/404/main.css">
     <style>
 
     </style>
@@ -38,7 +38,7 @@
                     <h2>系统内容错误！</h2>
                     <div class="utilities">
                         <center>
-                        <form name="formsearch" action="/search" id="formkeyword">
+                        <form name="formsearch" action="${pageContext.request.contextPath}/search" id="formkeyword">
                             <div class="input-container">
                                 <input type="text" class="left" name="query" size="24" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';}" onblur="if(this.value==''){this.value='在这里搜索...';}" id="inputString" onkeyup="lookup(this.value);" onblur="fill();" placeholder="搜索..." />
                                 <button id="search"></button>
@@ -46,7 +46,7 @@
                         </form>
                         <div id="btn">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a class="button" href="/">返回首页</a>
+                            <a class="button" href="${pageContext.request.contextPath}/">返回首页</a>
                             <a class="button" href="http://wpa.qq.com/msgrd?v=3&uin=847064370&site=qq&menu=yes">联系站长</a>
                             <div class="clear"></div>
                         </div>

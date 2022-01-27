@@ -15,7 +15,7 @@
 <rapid:override name="content">
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-          <a href="/admin">首页</a>
+          <a href="${pageContext.request.contextPath}/admin">首页</a>
           <a><cite>页面列表</cite></a>
         </span>
     </blockquote>
@@ -52,7 +52,7 @@
                             ${p.pageTitle}
                         </td>
                         <td>
-                            <a href="/${p.pageKey}"
+                            <a href="${pageContext.request.contextPath}/${p.pageKey}"
                                target="_blank">
                                     ${fn:substring(p.pageContent, 0,20 )}
 
@@ -71,9 +71,9 @@
                             </c:choose>
                         </td>
                         <td>
-                            <a href="/admin/page/edit/${p.pageId}"
+                            <a href="${pageContext.request.contextPath}/admin/page/edit/${p.pageId}"
                                class="layui-btn layui-btn-mini">编辑</a>
-                            <a href="/admin/page/delete/${p.pageId}"
+                            <a href="${pageContext.request.contextPath}/admin/page/delete/${p.pageId}"
                                class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
                         </td>
                     </tr>
@@ -106,7 +106,7 @@
                         <tr>
                             <td>${p.pageKey}</td>
                             <td>${p.pageTitle}</td>
-                            <td><a href="/${p.pageKey}" target="_blank">点击查看</a></td>
+                            <td><a href="${pageContext.request.contextPath}/${p.pageKey}" target="_blank">点击查看</a></td>
                         </tr>
                     </c:if>
                 </c:forEach>

@@ -26,13 +26,13 @@
 
     <blockquote class="layui-elem-quote">
          <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a href="/admin/user">用户列表</a>
+              <a href="${pageContext.request.contextPath}/admin">首页</a>
+              <a href="${pageContext.request.contextPath}/admin/user">用户列表</a>
               <a><cite>编辑用户</cite></a>
         </span>
     </blockquote>
     <br><br>
-    <form class="layui-form" action="/admin/user/editSubmit" id="userForm"
+    <form class="layui-form" action="${pageContext.request.contextPath}/admin/user/editSubmit" id="userForm"
           method="post">
         <input type="hidden" name="userId" id="userId" value="${user.userId}">
         <div class="layui-form-item">
@@ -117,7 +117,7 @@
                 upload = layui.upload;
             var uploadInst = upload.render({
                 elem: '#test1',
-                url: '/admin/upload/img',
+                url: '${pageContext.request.contextPath}/admin/upload/img',
                 before: function (obj) {
                     obj.preview(function (index, file, result) {
                         $('#demo1').attr('src', result);

@@ -97,11 +97,11 @@ public class UploadFileController {
     }
 
     private void getRootPath() {
-       try{
-           Properties properties = Resources.getResourceAsProperties("base.properties");
-           this.rootPath = properties.getProperty("upload.path");
-       }catch (Exception e){
-           e.printStackTrace();
-       }
+        try{
+            Properties properties = Resources.getResourceAsProperties("base.properties");
+            this.rootPath = properties.getProperty("upload.path");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

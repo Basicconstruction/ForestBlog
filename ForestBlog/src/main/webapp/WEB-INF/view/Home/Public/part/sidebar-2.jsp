@@ -6,10 +6,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%--博客主体-右侧侧边栏 start--%>
+
+
+
+
 <div id="sidebar" class="widget-area all-sidebar"
      style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
 
-    <%--关于本站 start--%>
+    <%--
+
+    关于本站 start
+    !important
+
+    --%>
+
+
+
+
     <aside class="widget about">
         <h3 class="widget-title">
             <i class="fa fa-bars"></i>关于本站
@@ -18,7 +31,7 @@
             <div class="feed-about">
                 <div class="about-main">
                     <div class="about-img">
-                        <img src="${options.optionAboutsiteAvatar}"
+                        <img src="${pageContext.request.contextPath}/${options.optionAboutsiteAvatar}"
                         alt="QR Code">
                     </div>
                     <div class="about-name">${options.optionAboutsiteTitle}</div>
@@ -99,7 +112,7 @@
         </h3>
         <div class="tagcloud">
             <c:forEach items="${allTagList}" var="tag">
-                <a href="/tag/${tag.tagId}"
+                <a href="${pageContext.request.contextPath}/tag/${tag.tagId}"
                    class="tag-link-129 tag-link-position-1"
                    style="font-size: 14px;">
                         ${tag.tagName}
@@ -119,7 +132,7 @@
             <ul>
                 <c:forEach items="${recentCommentList}" var="r">
                 <li style="border: none;">
-                    <a href="/article/${r.commentArticleId}/#anchor-comment-${r.commentId}"  rel="external nofollow">
+                    <a href="${pageContext.request.contextPath}/article/${r.commentArticleId}/#anchor-comment-${r.commentId}"  rel="external nofollow">
                         <%--<img alt="" src="${r.commentAuthorAvatar}" class="avatar avatar-64 photo" height="64" width="64">--%>
                         <span class="comment_author">
                             <strong>${r.commentAuthorName}</strong>

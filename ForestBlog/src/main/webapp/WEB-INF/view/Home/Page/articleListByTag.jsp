@@ -18,12 +18,12 @@
 <%--面包屑导航 start--%>
 <rapid:override name="breadcrumb">
     <nav class="breadcrumb">
-        <a class="crumbs" href="/">
+        <a class="crumbs" href="${pageContext.request.contextPath}/">
             <i class="fa fa-home"></i>首页</a>
         <i class="fa fa-angle-right"></i>
         <c:choose>
             <c:when test="${tag != null}">
-                <a href="/tag/${tag.tagId}">${tag.tagName}</a>
+                <a href="${pageContext.request.contextPath}/tag/${tag.tagId}">${tag.tagName}</a>
                 <i class="fa fa-angle-right"></i> 文章
             </c:when>
             <c:otherwise>
@@ -49,20 +49,20 @@
                         <article class="post">
 
                             <figure class="thumbnail">
-                                <a href="/article/${a.articleId}">
+                                <a href="${pageContext.request.contextPath}/article/${a.articleId}">
                                     <img width="280" height="210"
                                          src="${a.articleThumbnail}"
                                          class="attachment-content size-content wp-post-image"
                                          alt="${a.articleTitle}">
                                 </a>
                                 <span class="cat">
-                                              <a href="/category/${a.categoryList[0].categoryId}">${a.categoryList[0].categoryName}</a>
+                                              <a href="${pageContext.request.contextPath}/category/${a.categoryList[0].categoryId}">${a.categoryList[0].categoryName}</a>
                                         </span>
                             </figure>
 
                             <header class="entry-header">
                                 <h2 class="entry-title">
-                                    <a href="/article/${a.articleId}" rel="bookmark">
+                                    <a href="${pageContext.request.contextPath}/article/${a.articleId}" rel="bookmark">
                                             ${a.articleTitle}
                                     </a>
                                 </h2>
@@ -101,7 +101,7 @@
                                                             ${a.articleViewCount} views
                                                     </span>
                                                     <span class="comment">&nbsp;&nbsp;
-                                                        <a href="/article/${a.articleId}#comments"
+                                                        <a href="${pageContext.request.contextPath}/article/${a.articleId}#comments"
                                                            rel="external nofollow">
                                                           <i class="fa fa-comment-o"></i>
                                                             <c:choose>
@@ -118,7 +118,7 @@
                                 <div class="clear"></div>
                             </div><!-- .entry-content -->
                             <span class="entry-more">
-                                            <a href="/article/${a.articleId}"
+                                            <a href="${pageContext.request.contextPath}/article/${a.articleId}"
                                                rel="bookmark">阅读全文
                                             </a>
                                         </span>

@@ -12,17 +12,17 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>${options.optionSiteTitle} &lsaquo; 登录</title>
-    <link rel="stylesheet" href="/plugin/font-awesome/css/font-awesome.min.css">
-    <link rel="shortcut icon" href="/img/logo.png">
-    <link rel='stylesheet' id='dashicons-css'  href='/plugin/login/dashicons.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='buttons-css'  href='/plugin/login/buttons.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='forms-css'  href='/plugin/login/forms.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='l10n-css'  href='/plugin/login/l10n.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='login-css'  href='/plugin/login/login.min.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/plugin/font-awesome/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/logo.png">
+    <link rel='stylesheet' id='dashicons-css'  href='${pageContext.request.contextPath}/plugin/login/dashicons.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='buttons-css'  href='${pageContext.request.contextPath}/plugin/login/buttons.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='forms-css'  href='${pageContext.request.contextPath}/plugin/login/forms.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='l10n-css'  href='${pageContext.request.contextPath}/plugin/login/l10n.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='login-css'  href='${pageContext.request.contextPath}/plugin/login/login.min.css' type='text/css' media='all' />
     <style type="text/css">
         body{
             font-family: "Microsoft YaHei", Helvetica, Arial, Lucida Grande, Tahoma, sans-serif;
-            background: url(/img/loginBg.jpg);
+            background: url(${pageContext.request.contextPath}/img/loginBg.jpg);
             width:100%;
             height:100%;
         }
@@ -60,7 +60,7 @@
 </head>
 <body class="login login-action-login wp-core-ui  locale-zh-cn">
 <div id="login">
-    <h1><a href="/" title="欢迎您光临本站！" tabindex="-1">${options.optionSiteTitle}</a></h1>
+    <h1><a href="${pageContext.request.contextPath}/" title="欢迎您光临本站！" tabindex="-1">${options.optionSiteTitle}</a></h1>
     <%
          String username = "";
          String password = "";
@@ -105,14 +105,14 @@
         wp_attempt_focus();
         if(typeof wpOnload=='function') wpOnload();
     </script>
-    <p id="backtoblog"><a href="/">&larr; 返回到风吟博客</a> | <a href="/register">注册</a></p>
+    <p id="backtoblog"><a href="${pageContext.request.contextPath}/">&larr; 返回到博客</a> | <a href="${pageContext.request.contextPath}/register">注册</a></p>
 
 </div>
 
 
 <div class="clear"></div>
 
-<script src="/js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 <script type="text/javascript">
 
 
@@ -128,7 +128,7 @@
             $.ajax({
                 async: false,//同步，待请求完毕后再执行后面的代码
                 type: "POST",
-                url: '/loginVerify',
+                url: '${pageContext.request.contextPath}/loginVerify',
                 contentType: "application/x-www-form-urlencoded; charset=utf-8",
                 data: $("#loginForm").serialize(),
                 dataType: "json",
@@ -136,8 +136,8 @@
                     if(data.code===0) {
                         alert(data.msg);
                     } else {
-                        console.log("/admin")
-                        window.location.href="/admin";
+                        console.log("${pageContext.request.contextPath}/admin")
+                        window.location.href="${pageContext.request.contextPath}/admin";
 
                     }
                 },

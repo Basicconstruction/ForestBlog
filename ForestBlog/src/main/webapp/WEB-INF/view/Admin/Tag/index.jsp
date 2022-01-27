@@ -12,7 +12,7 @@
     <style>
         /*覆盖 layui*/
         .layui-input-block {
-            margin:0px 10px;
+            margin:0 10px;
         }
         .layui-table {
             margin-top: 0;
@@ -33,13 +33,13 @@
 
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
+              <a href="${pageContext.request.contextPath}/admin">首页</a>
               <a><cite>标签列表</cite></a>
         </span>
     </blockquote>
     <div class="layui-row">
         <div class="layui-col-md4">
-            <form class="layui-form"  method="post" id="myForm" action="/admin/tag/insertSubmit">
+            <form class="layui-form"  method="post" id="myForm" action="${pageContext.request.contextPath}/admin/tag/insertSubmit">
                 <div class="layui-form-item">
                     <div class="layui-input-block">
                         <strong>添加标签</strong>
@@ -89,15 +89,15 @@
 
                     <tr>
                         <td>
-                            <a href="/tag/${c.tagId}" target="_blank">${c.tagName}</a>
+                            <a href="${pageContext.request.contextPath}/tag/${c.tagId}" target="_blank">${c.tagName}</a>
                         </td>
                         <td >
-                            <a href="/tag/${c.tagId}" target="_blank"  lay-data="{sort:true}">${c.articleCount}</a>
+                            <a href="${pageContext.request.contextPath}/tag/${c.tagId}" target="_blank"  lay-data="{sort:true}">${c.articleCount}</a>
                         </td>
                         <td>
-                            <a href="/admin/tag/edit/${c.tagId}" class="layui-btn layui-btn-mini">编辑</a>
+                            <a href="${pageContext.request.contextPath}/admin/tag/edit/${c.tagId}" class="layui-btn layui-btn-mini">编辑</a>
 <%--                            <c:if test="${c.articleCount==0}">--%>
-                                <a href="/admin/tag/delete/${c.tagId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                                <a href="${pageContext.request.contextPath}/admin/tag/delete/${c.tagId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
 <%--                            </c:if>--%>
 
                         </td>

@@ -25,13 +25,13 @@
 
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a href="/admin/comment">评论列表</a>
+              <a href="${pageContext.request.contextPath}/admin">首页</a>
+              <a href="${pageContext.request.contextPath}/admin/comment">评论列表</a>
               <a><cite>回复评论</cite></a>
         </span>
     </blockquote>
 
-    <form class="layui-form"  method="post" id="myForm" action="/admin/comment/replySubmit">
+    <form class="layui-form"  method="post" id="myForm" action="${pageContext.request.contextPath}/admin/comment/replySubmit">
         <input type="hidden" name="commentPid" value="${comment.commentId}">
         <input type="hidden" name="commentPname" value="${comment.commentAuthorName}">
         <input type="hidden" name="commentArticleId" value="${comment.commentArticleId}">

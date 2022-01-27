@@ -1,6 +1,6 @@
 function DoCheck() {
     var ch = document.getElementsByName("ids");
-    if (document.getElementById("allSelect").checked == true) {
+    if (document.getElementById("allSelect").checked === true) {
         for (var i = 0; i < ch.length; i++) {
             ch[i].checked = true;
         }
@@ -13,7 +13,7 @@ function DoCheck() {
 
 function confirmDelete() {
     var msg = "您确定要删除吗？";
-    if (confirm(msg)==true){
+    if (confirm(msg)===true){
         return true;
     }else{
         return false;
@@ -39,11 +39,11 @@ $(".dashboard-comment-wrap").mouseleave(function () {
 
 //删除评论
 function deleteComment(id) {
-    if(confirmDelete()==true){
+    if(confirmDelete()===true){
         $.ajax({
             async: false,
             type: "POST",
-            url:'/admin/comment/delete/'+id,
+            url:'${pageContext.request.contextPath}/admin/comment/delete/'+id,
             contentType : "application/x-www-form-urlencoded; charset=utf-8",
             dataType: "text",
             complete:function () {
@@ -55,28 +55,28 @@ function deleteComment(id) {
 
 //添加草稿
 function insertDraft() {
-    if($("#articleContent").val!=""&&$("#articleTitle").val()!="") {
+    if($("#articleContent").val!==""&&$("#articleTitle").val()!=="") {
         $.ajax({
             async: false,
             type: "POST",
-            url:'/admin/article/insert',
+            url:'${pageContext.request.contextPath}/admin/article/insert',
             contentType : "application/x-www-form-urlencoded; charset=utf-8",
             dataType: "text",
             complete:function () {
                 window.location.reload();
             }
-    })
+        })
     }
 
 }
 
 //删除文章
 function deleteArticle(id) {
-    if(confirmDelete()==true){
+    if(confirmDelete()===true){
         $.ajax({
             async: false,
             type: "POST",
-            url:'/admin/article/delete/'+id,
+            url:'${pageContext.request.contextPath}/admin/article/delete/'+id,
             contentType : "application/x-www-form-urlencoded; charset=utf-8",
             dataType: "text",
             complete:function () {
@@ -89,20 +89,20 @@ function deleteArticle(id) {
 //查询文章
 function queryArticle() {
     //提交form
-    $("#articleForm").attr("action", "/admin/article/search");
+    $("#articleForm").attr("action", "${pageContext.request.contextPath}/admin/article/search");
     $("#articleForm").submit();
 }
 
 //批量删除文章
 function confirmDeleteArticleBatch() {
-    if(confirmDelete()==true){
+    if(confirmDelete()===true){
         var text = $("input:checkbox[name='ids']:checked").map(function(index,elem) {
             return $(elem).val();
         }).get().join(',');
         $.ajax({
             async: false,
             type: "POST",
-            url:'/admin/article/deleteBatch',
+            url:'${pageContext.request.contextPath}/admin/article/deleteBatch',
             data:{ids:text},
             contentType : "application/x-www-form-urlencoded; charset=utf-8",
             dataType: "text",
@@ -118,7 +118,7 @@ function logout() {
     $.ajax({
         async: false,
         type: "POST",
-        url:'/admin/logout',
+        url:'${pageContext.request.contextPath}/admin/logout',
         contentType : "application/x-www-form-urlencoded; charset=utf-8",
         dataType: "text",
         complete:function () {
@@ -135,18 +135,18 @@ function checkUserName() {
     $.ajax({
         async: false,//同步，待请求完毕后再执行后面的代码
         type: "POST",
-        url: '/admin/user/checkUserName',
+        url: '${pageContext.request.contextPath}/admin/user/checkUserName',
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         data: {"username": $("#userName").val(), "id": $("#userId").val()},
         dataType: "json",
         success: function (data) {
             //用户名存在
-            if(data.code==1) {
+            if(data.code===1) {
                 $("#userNameTips").html(data.msg);
                 result=1;
             }
             //用户名不存在
-            if(data.code==0) {
+            if(data.code===0) {
                 $("#userNameTips").html(data.msg);
                 result=0;
             }
@@ -164,18 +164,18 @@ function checkUserEmail() {
     $.ajax({
         async: false,//同步，待请求完毕后再执行后面的代码
         type: "POST",
-        url: '/admin/user/checkUserEmail',
+        url: '${pageContext.request.contextPath}/admin/user/checkUserEmail',
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         data: {"email": $("#userEmail").val(), "id": $("#userId").val()},
         dataType: "json",
         success: function (data) {
             //用户名存在
-            if(data.code==1) {
+            if(data.code===1) {
                 $("#userEmailTips").html(data.msg);
                 result=1;
             }
             //用户名不存在
-            if(data.code==0) {
+            if(data.code===0) {
                 $("#userEmailTips").html(data.msg);
                 result=0;
             }
@@ -198,12 +198,12 @@ layui.use(['form', 'layedit', 'laydate'], function () {
             if (value.length > 12 || value.length < 4) {
                 return "用户名必须4到12位";
             }
-            if(checkUserName()==1) {
+            if(checkUserName()===1) {
                 return "用户名已存在";
             }
         },
         userEmail: function () {
-            if(checkUserEmail()==1) {
+            if(checkUserEmail()===1) {
                 return "电子邮箱已存在";
             }
         }

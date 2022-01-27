@@ -233,7 +233,7 @@
                                 <c:forEach items="${articleList}" begin="0" end="4" step="1" var="a">
                                     <li><span><fmt:formatDate value="${a.articleCreateTime}"
                                                               pattern="HH:mm MM月dd日"/> </span>
-                                        <a href="/article/${a.articleId}"
+                                        <a href="${pageContext.request.contextPath}/article/${a.articleId}"
                                            target="_blank">${a.articleTitle}</a>
                                     </li>
                                 </c:forEach>
@@ -251,23 +251,23 @@
                                         <div class="dashboard-comment-wrap has-row-actions">
                                             <p class="comment-meta">
                                                 由<cite class="comment-author">
-                                                <a target="_blank" href="${c.commentAuthorUrl}"
+                                                <a target="_blank" href="${pageContext.request.contextPath}/${c.commentAuthorUrl}"
                                                    rel="external nofollow"
                                                    class="url">${c.commentAuthorName}</a>
                                             </cite>发表在
-                                                《<a href="/article/${c.commentArticleId}">${c.article.articleTitle}</a>》
+                                                《<a href="${pageContext.request.contextPath}/article/${c.commentArticleId}">${c.article.articleTitle}</a>》
                                             </p>
 
                                             <blockquote><p>${c.commentContent}</p></blockquote>
                                             <p class="row-actions">|
                                                 <span class="">
                                             <a data-comment-id="1268"
-                                               href="/admin/comment/reply/${c.commentId}">
+                                               href="${pageContext.request.contextPath}/admin/comment/reply/${c.commentId}">
                                                 回复
                                             </a>
                                             </span>
                                                 <span class=""> |
-                                                <a href="/admin/comment/edit/${c.commentId}">编辑</a>
+                                                <a href="${pageContext.request.contextPath}/admin/comment/edit/${c.commentId}">编辑</a>
                                             </span>
                                                 <span class=""> |
                                                 <a href="javascript:void(0)"
@@ -287,7 +287,7 @@
             <div id="dashboard_quick_press" class="postbox ">
                 <div class="inside">
                     <form name="post" method="post" id="insertDraftForm"
-                          class="initial-form hide-if-no-js" action="/admin/article/insertDraftSubmit">
+                          class="initial-form hide-if-no-js" action="${pageContext.request.contextPath}/admin/article/insertDraftSubmit">
 
                         <div class="layui-form-item">
                             <div class="layui-input-block">
@@ -309,7 +309,7 @@
 
                     </form>
                     <div class="drafts"><p class="view-all"><a
-                            href="/admin/article"
+                            href="${pageContext.request.contextPath}/admin/article"
                             aria-label="查看所有草稿">查看所有</a></p>
                         <h2 class="hide-if-no-js">草稿</h2>
                         <ul>
@@ -317,7 +317,7 @@
                                 <c:if test="${a.articleStatus==0}">
                                     <li>
                                         <div class="draft-title"><a
-                                                href="/admin/article/edit/${a.articleId}">${a.articleTitle}</a>
+                                                href="${pageContext.request.contextPath}/admin/article/edit/${a.articleId}">${a.articleTitle}</a>
                                             <time ><fmt:formatDate value="${a.articleCreateTime}" pattern="yyyy年MM月dd日"/></time>
                                         </div>
                                     </li>
