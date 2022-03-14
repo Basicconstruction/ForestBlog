@@ -56,11 +56,11 @@
                             <i class="fa fa-qq"></i>
                         </a>
                     </li>
-                    <li class="tsina">
+                    <li class="tgitee">
                         <a title=""
-                           href="http://weibo.com/${options.optionAboutsiteWeibo}"
+                           href="https://gitee.com/${options.optionAboutsiteGitee}"
                            target="_blank" rel="external nofollow">
-                            <i class="fa fa-weibo"></i>
+                            <i class="fa fa-gitee">gitee</i>
                         </a>
                     </li>
                     <li class="feed">

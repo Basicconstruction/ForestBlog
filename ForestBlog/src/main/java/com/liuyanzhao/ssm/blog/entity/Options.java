@@ -32,7 +32,7 @@ public class Options implements Serializable{
 
     private String optionAboutsiteGithub;
 
-    private String optionAboutsiteWeibo;
+    private String optionAboutsiteGitee;
 
     private String optionTongji;
 

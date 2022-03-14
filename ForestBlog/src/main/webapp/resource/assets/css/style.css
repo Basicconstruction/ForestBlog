@@ -337,18 +337,18 @@ a, button, input {
         padding: 0 0 0 20px !important;
     }
 }
-/** weibo **/
-.weibo {
+/** gitee **/
+.gitee {
     position: absolute;
     top: 35px;
     left: 200px;
 }
 
-.weibo span {
+.gitee span {
     display: none;
 }
 
-.weibo .WB_icon_text {
+.gitee .WB_icon_text {
     display: none;
 }
 
@@ -3096,7 +3096,7 @@ img.alignleft {
     border: 1px solid #248a34
 }
 
-#feed_widget .tsina a:hover {
+#feed_widget .tgitee a:hover {
     background: #c40000;
     border: 1px solid #c40000
 }
@@ -5378,7 +5378,7 @@ li.comments-anchor {
     background: #ff7400 !important;
 }
 
-#share .fa-weibo:hover {
+#share .fa-gitee:hover {
     background: #ff0000 !important;
 }
 
@@ -5621,7 +5621,7 @@ li.comments-anchor {
     margin: 0;
     padding: 0;
     border: none;
-    box-shadow: 0;
+    box-shadow:none;
     border-radius: 0;
 }
 
@@ -6008,7 +6008,7 @@ li.search-inf {
         left: 130px;
     }
 
-    .weibo {
+    .gitee {
         display: none;
     }
 

@@ -116,6 +116,6 @@
             <trim-directive-whitespaces>true</trim-directive-whitespaces>
         </jsp-property-group>
     </jsp-config>
-
+<!--注意 script.js-->
 
 </web-app>

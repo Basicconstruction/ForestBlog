@@ -62,64 +62,9 @@
                             ${article.articleContent}
                     </div>
 
-                    <div class="s-weixin">
-                        <ul class="weimg1">
-                            <li><strong>微信</strong></li>
-                            <li>赶快加我聊天吧</li>
-                            <li><img src="${pageContext.request.contextPath}/img/weixin.jpg"></li>
-                        </ul>
-                        <ul class="weimg2">
-                            <li><strong>博客交流群</strong></li>
-                            <li>海纳百川，大家来水</li>
-                            <li><img src="${pageContext.request.contextPath}/img/qqGroup.jpg" alt="weinxin"></li>
-                        </ul>
-                        <div class="clear"></div>
-                    </div>
-
 
                     <div class="clear"></div>
-                    <div id="social">
-                        <div class="social-main">
-                            <span class="like">
-                                <a href="javascript:;" data-action="ding" data-id="1" title="点赞"
-                                   class="favorite" onclick="increaseLikeCount()">
-                                    <i class="fa fa-thumbs-up"></i>赞
-                                    <i class="count"
-                                       id="count-${article.articleId}">${article.articleLikeCount}</i>
-                                </a>
-                            </span>
-                            <div class="shang-p">
-                                <div class="shang-empty"><span></span></div>
-                                <span class="shang-s">
-                                    <a onclick="PaymentUtils.show();" style="cursor:pointer">赏</a>
-                                </span>
-                            </div>
-                            <div class="share-sd">
-                                        <span class="share-s" style="margin-top: 25px!important;">
-                                            <a href="javascript:void(0)" id="share-s" title="分享">
-                                                <i class="fa fa-share-alt"></i>分享
-                                            </a>
-                                        </span>
-                                <div id="share">
-                                    <ul class="bdsharebuttonbox bdshare-button-style1-16" data-bd-bind="1503997585792">
-                                        <li><a title="更多" class="bds_more fa fa-plus-square" data-cmd="more"
-                                               onclick="return false;" href="#"></a></li>
-                                        <li><a title="分享到QQ空间" class="fa fa-qq" data-cmd="qzone" onclick="return false;"
-                                               href="#"></a></li>
-                                        <li><a title="分享到新浪微博" class="fa fa-weibo" data-cmd="tsina"
-                                               onclick="return false;" href="#"></a></li>
-                                        <li><a title="分享到腾讯微博" class="fa fa-pinterest-square" data-cmd="tqq"
-                                               onclick="return false;" href="#"></a></li>
-                                        <li><a title="分享到人人网" class="fa fa-renren" data-cmd="renren"
-                                               onclick="return false;" href="#"></a></li>
-                                        <li><a title="分享到微信" class="fa fa-weixin" data-cmd="weixin"
-                                               onclick="return false;" href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
+
 
                     <footer class="single-footer">
                         <ul class="single-meta">
@@ -151,6 +96,8 @@
                         <ul id="fontsize">
                             <li>A+</li>
                         </ul>
+                        <br>
+                        <br>
                         <div class="single-cat-tag">
                             <div class="single-cat">所属分类：
                                 <c:forEach items="${article.categoryList}" var="c">
