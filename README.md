@@ -1,5 +1,5 @@
 注意以下readme信息来源于源github项目。本分叉并不打算修改。
-
+链接到gitee获取最新（也不怎么更新）版本。https://gitee.com/bludogs/ForestBlog
 
 最新消息，SpringBoot博客已经开源，[SENS](https://github.com/saysky/SENS) <br/>
 最新消息 SpringBoot/SSM/Duubo多个版本 [初云博客-SpringBoot版本](https://github.com/saysky/ChuyunBlog)<br/>
